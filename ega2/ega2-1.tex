@@ -151,3 +151,86 @@ This follows immediately from Proposition~\sref{2.1.2.7} and from the functorial
 \subsection{Affine preschemes over $S$ associated to an $\mathcal{O}_S$-algebra}
 \label{subsection:affine-preschemes-associated-to-algebra}
 
+\begin{prop}[1.3.1]
+\label{2.1.3.1}
+Let $S$ be a prescheme.
+For every quasi-coherent $\OO_S$-algebra $\sh{B}$, there exists a prescheme $X$ affine over $S$, defined up to unique $S$-isomorphism, such that $\sh{A}(X)=\sh{B}$.
+\end{prop}
+
+\begin{proof}
+\label{proof-2.1.3.1}
+The uniqueness follows from Corollary~\sref{2.1.2.8}; we prove the existence of $X$.
+For every affine open $U\subset S$, let $X_U$ be the prescheme $\Spec(\Gamma(U,\sh{B}))$; as $\Gamma(U,\sh{B})$ is a $\Gamma(U,\OO_S)$-algebras, $X_U$ is an $S$-prescheme \sref[I]{1.1.6.1}.
+In addition, as $\sh{B}$ is quasi-coherent, the $\OO_S$-algebra $\sh{A}(X_U)$ canonically identifies with $\sh{B}|U$ (\sref[I]{1.1.3.7}, \sref[I]{1.1.3.13}, \sref[I]{1.1.6.3}).
+Let $V$ be a second affine open subset of $S$, and let $X_{U,V}$ be the prescheme induced by $X_U$ on $f_U^{-1}(U\cap V)$, where $f_U$ denotes the structure morphism $X_U\to S$; $X_{U,V}$ and $X_{V,U}$ are affine over $U\cap V$ \sref{2.1.2.5}, and by definition $\sh{A}(X_{U,V})$ and $\sh{A}(X_{V,U})$ canonically identify with $\sh{B}|(U\cap V)$.
+Hence there is \sref{2.1.2.8} a canonical $S$-isomorphism $\theta_{U,V}:X_{U,V}\to X_{U,V}$; in addition, if $W$ is a third affine open subset of $S$, and if $\theta_{U,V}'$, $\theta_{V,W}'$, and $\theta_{U,W}'$ are the restrictions of $\theta_{U,V}$, $\theta_{V,W}$, and $\theta_{U,W}$ to the inverse images of $U\cap V\cap W$ in $X_V$, $X_W$, and $X_W$ respectively under the structure morphisms, then we have $\theta_{U,V}'\circ\theta_{V,W}'=\theta_{U,W}'$.
+As a result, there exists a prescheme $X$, a cover $(T_U)$ of $X$ by affine open sets, and for every $U$ an isomorphism $\vphi_U:X_U\to T_U$, such that $\vphi_U$ maps $f_U^{-1}(U\cap V)$ to $T_U\cap T_V$, and we have $\theta_{U,V}=\vphi_U^{-1}\circ\vphi_V$ \sref[I]{1.2.3.1}.
+The morphism $g_U=f_U\circ\vphi_U^{-1}$ makes $T_U$ an $S$-prescheme, and the morphisms $g_U$ and $g_V$ coincide on $T_U\cap T_V$, hence $X$ is an $S$-prescheme.
+In addition, it is clear by definition that $X$ is affine over $S$ and that $\sh{A}(T_U)=\sh{B}|U$, hence $\sh{A}(X)=\sh{B}$.
+\end{proof}
+
+We say that the $S$-scheme $X$ defined in this way is \emph{associated to the $\OO_S$-algebra $\sh{B}$}, or is the \emph{spectrum of $\sh{B}$}, and we denote it by $\Spec(\sh{B})$.
+
+\begin{cor}[1.3.2]
+\label{2.1.3.2}
+Let $X$ be a prescheme affine over $S$, $f:X\to S$ the structure morphism.
+For every affine open $U\subset S$, the induced prescheme on $f^{-1}(U)$ is the affine scheme with ring $\Gamma(U,\sh{A}(X))$.
+\end{cor}
+
+\begin{proof}
+\label{proof-2.1.3.2}
+\oldpage[II]{9}
+As we can suppose that $X$ is associated to an $\OO_S$-algebra by Propositions~\sref{2.1.2.6} and \sref{2.1.3.1}, the corollary follows from the construction of $X$ described in Proposition~\sref{2.1.3.1}.
+\end{proof}
+
+\begin{exm}[1.3.3]
+\label{2.1.3.3}
+Let $S$ be the affine plane over a field $K$, where the point $0$ has been doubled \sref[I]{1.5.5.11}; with the notation of \sref[I]{1.5.5.11}, $S$ is the union of two affine open sets $Y_1$ and $Y_2$; if $f$ is the open immersion $Y_1\to S$, then $f^{-1}(Y_2)=Y_1\cap Y_2$ is not an affine open set in $Y_1$ (\emph{loc. cit.}), hence we have an example of an affine scheme which is not affine over $S$.
+\end{exm}
+
+\begin{cor}[1.3.4]
+\label{2.1.3.4}
+Let $S$ be an affine scheme; for an $S$-prescheme $X$ to be affine over $S$, it is necessary and sufficient for $X$ to be an affine scheme.
+\end{cor}
+
+\begin{cor}[1.3.5]
+\label{2.1.3.5}
+Let $X$ be a prescheme affine over a prescheme $S$, and let $Y$ be an $X$-prescheme.
+For $Y$ to be affine over $S$, it is necessary and sufficient for $Y$ to be affine over $X$.
+\end{cor}
+
+\begin{proof}
+\label{proof-2.1.3.5}
+We immediately reduce to the case where $S$ is an affine scheme, and then we can reduce to the case where $X$ is an affine scheme \sref{2.1.3.4}; the two conditions of the statement then give that $Y$ is an affine scheme \sref{2.1.3.4}.
+\end{proof}
+
+\begin{env}[1.3.6]
+\label{2.1.3.6}
+Let $X$ be a prescheme affine over $S$.
+To define a prescheme $Y$ affine \emph{over $X$}, it is equivalent, by Corollary~\sref{2.1.3.5}, to give a prescheme $Y$ affine \emph{over $S$}, and an $S$-morphism $g:Y\to X$; in other words (Proposition~\sref{2.1.3.1} and \sref{2.1.2.7}), it is equivalent to give a quasi-coherent $\OO_S$-algebra $\sh{B}$ and a homomorphism $\sh{A}(X)\to\sh{B}$ of $\OO_S$-algebras (which can be considered as defining on $\sh{B}$ an $\sh{A}(X)$-algebra structure).
+If $f:X\to S$ is the structure morphism, then we have $\sh{B}=f_*(g_*(\OO_Y))$.
+\end{env}
+
+\begin{cor}[1.3.7]
+\label{2.1.3.7}
+Let $X$ be a prescheme affine over $S$; for $X$ to be of finite type over $S$, it is necessary and sufficient for the quasi-coherent $\OO_S$-algebra $\sh{A}(X)$ to be of finite type \sref[I]{1.9.6.2}.
+\end{cor}
+
+\begin{proof}
+\label{proof-2.1.3.7}
+By definition \sref[I]{1.9.6.2}, we can reduce to the case where $S$ is affine; then $X$ is an affine scheme \sref{2.1.3.4}, and if $S=\Spec(A)$, $X=\Spec(B)$, then $\sh{A}(X)$ is the $\OO_S$-algebra $\wt{B}$; as $\Gamma(U,\wt{B})=B$, the corollary follows from \sref[I]{1.9.6.2} and \sref[I]{1.6.3.3}.
+\end{proof}
+
+\begin{cor}[1.3.8]
+\label{2.1.3.8}
+Let $X$ be a prescheme affine over $S$; for $X$ to be reduced, it is necessary and sufficient for the quasi-coherent $\OO_X$-algebra $\sh{A}(X)$ to be reduced \sref[0]{0.4.1.4}.
+\end{cor}
+
+\begin{proof}
+\label{proof-2.1.3.8}
+The question is local on $S$; by Corollary~\sref{2.1.3.2}, the corollary follows from \sref[I]{1.5.1.1} and \sref[I]{1.5.1.4}.
+\end{proof}
+
+\subsection{Quasi-coherent sheaves over a prescheme affine over $S$}
+\label{subsection:quasi-coherent-sheaves-on-prescheme-affine-over}
+
