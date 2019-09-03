@@ -83,19 +83,71 @@ Let $X$ be an $S$-scheme affine over $S$, $f:X\to S$ its structure morphism.
 For every open $U\subset S$, $f^{-1}(U)$ is affine over $U$.
 \end{prop}
 
+\begin{proof}
+\label{proof-2.1.2.5}
+By Definition~\sref{2.1.2.1}, we can reduce to the case where $S=\Spec(A)$ and $X=\Spec(B)$ are affine; then $f=({}^a\vphi,\wt{\vphi})$, where $\vphi:A\to B$ is a homomorphism.
+As the $D(g)$ for $g\in A$ form a basis for $S$, we reduce to the case where $U=D(g)$; but we then know that $f^{-1}(U)=D(\vphi(g))$ (\textbf{I},~1.2.2.2), hence the proposition.
+\end{proof}
 
+\begin{prop}[1.2.6]
+\label{2.1.2.6}
+Let $X$ be an $S$-scheme affine over $S$, $f:X\to S$ its structure morphism.
+For every quasi-coherent $\OO_X$-module $\sh{F}$, $f_*(\sh{F})$ is a quasi-coherent $\OO_S$-module.
+\end{prop}
 
+\begin{proof}
+\label{proof-2.1.2.6}
+Taking into account Proposition~\sref{2.1.2.4}, this follows from \sref[I]{1.9.2.2}[a].
+\end{proof}
 
+In particular, the $\OO_S$-algebra $\sh{A}(X)=f_*(\OO_X)$ is \emph{quasi-coherent}.
 
+\begin{prop}[1.2.7]
+\label{2.1.2.7}
+Let $X$ be an $S$-scheme affine over $S$.
+For every $S$-prescheme $Y$, the map $h\mapsto\sh{A}(h)$ from the set $\Hom_S(Y,X)$ to the set $\Hom(\sh{A}(X),\sh{A}(Y))$ \sref{2.1.1.2} is bijective.
+\end{prop}
 
+\begin{proof}
+\label{proof-2.1.2.7}
+Let $f:X\to S$ and $g:Y\to S$ be the structure morphisms.
+First, suppose that $S=\Spec(A)$ and $X=\Spec(B)$ are affine; we must prove that for every homomorphism $\omega:f_*(\OO_X)\to g_*(\OO_Y)$ of $\OO_S$-algebras, there exists a unique $S$-morphism $h:Y\to X$ such that $\sh{A}(h)=\omega$.
+By definition, for every open $U\subset S$, $\omega$ defines a homomorphism $\omega_U=\Gamma(U,\omega):\Gamma(f^{-1}(U),\OO_X)\to\Gamma(g^{-1}(U),\OO_Y)$ of $\Gamma(U,\OO_S)$-algebras.
+In particular, for $U=S$, this gives a homomorphism $\vphi:\Gamma(X,\OO_X)\to\Gamma(Y,\OO_Y)$ of $\Gamma(S,\OO_S)$-algebras, to which corresponds a well-defined $S$-morphism $h:Y\to X$, since $X$ is affine \sref[I]{1.2.2.4}.
+It remains to prove that $\sh{A}(h)=\omega$, in other words, for every open set $U$ of a basis for $S$, $\omega_U$ coincides with the homomorphism of algebras $\vphi_U$ corresponding to the $S$-morphism $g^{-1}(U)\to f^{-1}(U)$, a restiction of $h$.
+We can reduce to the case where $U=D(\lambda)$, with $\lambda\in S$; then, if $f=({}^a\rho,\wt{\rho})$, where $\rho:A\to B$ is a ring homomorphism, we have $f^{-1}(U)=D(\mu)$, where $\mu=\rho(\lambda)$, and $\Gamma(f^{-1}(U),\OO_X)$ is the ring of fractions $B_\mu$; the diagram
+\[
+  \xymatrix{
+    B\ar[r]^\vphi\ar[d] &
+    \Gamma(Y,\OO_Y)\ar[d]\\
+    B_\mu\ar[r]^{\vphi_U} &
+    \Gamma(g^{-1}(U),\OO_Y)
+  }
+\]
+is commutative, and so is the analogous diagram where $\vphi_U$ is replaced by $\omega_U$; the equality $\vphi_U=\omega_U$ then follows from the universal property of rings of fractions \sref[0]{0.1.2.4}.
 
+We now pass to the general case; let $(S_\alpha)$ be a cover of $S$ by affine open sets
+\oldpage[II]{8}
+such that the $f^{-1}(S_\alpha)$ are affine.
+Then every homomorphism $\omega:\sh{A}(X)\to\sh{A}(Y)$ of $\OO_S$-algebras gives by restriction a family of homomorphisms
+\[
+  \omega_\alpha:\sh{A}(f^{-1}(S_\alpha))\to\sh{A}(g^{-1}(S_\alpha))
+\]
+of $\OO_{S_\alpha}$-algebras, hence a family of $S_\alpha$-morphisms $h_\alpha:g^{-1}(S_\alpha)\to f^{-1}(S_\alpha)$ by the above.
+It remains to see that for every affine open set of a basis for $S_\alpha\cap S_\beta$, the restriction of $h_\alpha$ and $h_\beta$ to $g^{-1}(U)$ coincide, which is evident since by the above, these restrictions both correspond to the homomorphism $\sh{A}(X)|U\to\sh{A}(Y)|U$, a restriction of $\omega$.
+\end{proof}
 
+\begin{cor}[1.2.8]
+\label{2.1.2.8}
+Let $X$ and $Y$ be two $S$-schemes which are affine over $S$.
+For an $S$-morphism $h:Y\to X$ to be an isomorphism, it is necessary and sufficient for $\sh{A}(h):\sh{A}(X)\to\sh{A}(Y)$ to be an isomorphism.
+\end{cor}
 
+\begin{proof}
+\label{proof-2.1.2.8}
+This follows immediately from Proposition~\sref{2.1.2.7} and from the functorial nature of $\sh{A}(X)$.
+\end{proof}
 
-
-
-
-
-
-
+\subsection{Affine preschemes over $S$ associated to an $\mathcal{O}_S$-algebra}
+\label{subsection:affine-preschemes-associated-to-algebra}
 
