@@ -22,6 +22,7 @@ Similarly, for every $\OO_X$-module $\sh{F}$ (resp. every $\OO_X$-algebra $\sh{B
 \label{2.1.1.2}
 Let $Y$ be a second $S$-prescheme, $g:Y\to S$ its structure morphism, and $h:X\to Y$ an $S$-morphism; we then have the commutative diagram
 \[
+\label{2.1.1.2.1}
   \xymatrix{
     X\ar[rr]^h\ar[rd]_f & &
     Y\ar[ld]^g\\
@@ -233,4 +234,148 @@ The question is local on $S$; by Corollary~\sref{2.1.3.2}, the corollary follows
 
 \subsection{Quasi-coherent sheaves over a prescheme affine over $S$}
 \label{subsection:quasi-coherent-sheaves-on-prescheme-affine-over}
+
+\begin{prop}[1.4.1]
+\label{2.1.4.1}
+Let $X$ be a prescheme affine over $S$, $Y$ an $S$-prescheme, and $\sh{F}$ (resp.~$\sh{G}$) a quasi-coherent $\OO_X$-module (resp.~an $\OO_Y$-module).
+Then the map $(h,u)\mapsto(\sh{A}(h),\sh{A}(u))$ from the set of morphism $(Y,\sh{G})\to(X,\sh{F})$ to the set of di-homomorphisms $(\sh{A}(X),\sh{A}(\sh{F}))\to(\sh{A}(Y),\sh{A}(\sh{G}))$ (\sref{2.1.1.2} and \sref{2.1.1.3}) is bijective.
+\end{prop}
+
+\begin{proof}
+\label{proof-2.1.4.1}
+The proof follows exactly as that of Proposition~\sref{2.1.2.7} by using \sref[I]{1.2.2.5} and \sref[I]{1.2.2.4}, and the details are left to the reader.
+\end{proof}
+
+\begin{cor}[1.4.2]
+\label{2.1.4.2}
+If, in addition to the hypotheses of Proposition~\sref{2.1.4.1}, we suppose that $Y$ is affine over $S$, then for $(h,u)$ to be an isomorphism, it is necessary and sufficient for $(\sh{A}(h),\sh{A}(u))$ to be a di-isomorphism.
+\end{cor}
+
+\begin{prop}[1.4.3]
+\label{2.1.4.3}
+\oldpage{10}
+For every pair $(\sh{B},\sh{M})$ consisting of a quasi-coherent $\OO_S$-algebra $\sh{B}$ and a quasi-coherent $\sh{B}$-module $\sh{M}$ \emph{(considered as an $\OO_S$-module or as a $\sh{B}$-module, which are equivalent~\sref[I]{1.9.6.1})}, there exists a pair $(X,\sh{F})$ consisting of a prescheme $X$ affine over $S$ and of a quasi-coherent $\OO_X$-module $\sh{F}$, such that $\sh{A}(X)=\sh{B}$ and $\sh{A}(\sh{F})=\sh{M}$; in addition, this couple is determined up to unique isomorphism.
+\end{prop}
+
+\begin{proof}
+\label{proof-2.1.4.3}
+The uniqueness follows from Proposition~\sref{2.1.4.1} and Corollary~\sref{2.1.4.2}; the existence is proved as in Proposition~\sref{2.1.3.1}, and we leave the details to the reader.
+\end{proof}
+
+We denote by $\wt{\sh{M}}$ the $\OO_X$-module $\sh{F}$, and we say that it is \emph{associated} to the quasi-coherent $\sh{B}$-module $\sh{M}$; for every affine open $U\subset S$, $\sh{M}|p^{-1}(U)$ (where $p$ is the structure morphism $X\to S$) is canonically isomorphic to $(\Gamma(U,\sh{M}))^\sim$.
+
+\begin{cor}[1.4.4]
+\label{2.1.4.4}
+On the category of quasi-coherent $\sh{B}$-modules, $\wt{\sh{M}}$ is an additive covariant exact functor in $\sh{M}$, which commutes with inductive limitd and direct sums.
+\end{cor}
+
+\begin{proof}
+\label{proof-2.1.4.4}
+We immediately reduce to the case where $S$ is affine, and the corollary then follows from \sref[I]{1.1.3.5}, \sref[I]{1.1.3.9}, and \sref[I]{1.1.3.11}.
+\end{proof}
+
+\begin{cor}[1.4.5]
+\label{2.1.4.5}
+Under the hypotheses of Proposition~\sref{2.1.4.3}, for $\wt{\sh{M}}$ to be an $\OO_X$-module of finite type, it is necessary and sufficient for $\sh{M}$ to be a $\sh{B}$-module of finite type.
+\end{cor}
+
+\begin{proof}
+\label{proof-2.1.4.5}
+We immediately reduce to the case where $S=\Spec(A)$ is an affine scheme.
+Then $\sh{B}=\wt{B}$, where $B$ is an $A$-algebra of finite type \sref[I]{1.9.6.2}, and $\sh{M}=\wt{M}$, where $M$ is a $B$-module \sref[I]{1.1.3.13}; \emph{over the prescheme $X$}, $\OO_X$ is associated to the ring $B$ and $\wt{\sh{M}}$ to the $B$-module $M$; for $\wt{\sh{M}}$ to be of finite type, it is therefore necessary and sufficient for $M$ to be of finite type \sref[I]{1.1.3.13}, hence our assertion.
+\end{proof}
+
+\begin{prop}[1.4.6]
+\label{2.1.4.6}
+Let $Y$ be a prescheme affine over $S$, $X$ and $X'$ two preschemes affine over $Y$ \emph{(hence also over $S$ \sref{2.1.3.5})}.
+Let $\sh{B}=\sh{A}(Y)$, $\sh{A}=\sh{A}(X)$, and $\sh{A}'=\sh{A}(X')$.
+Then $X\times_Y X'$ is affine over $Y$ \emph{(thus also over $S$)}, and $\sh{A}(X\times_Y X')$ canonically identifies with $\sh{A}\otimes_\sh{B}\sh{A}'$.
+\end{prop}
+
+\begin{proof}
+\label{proof-2.1.4.6}
+By \sref[I]{1.9.6.1}, $\sh{A}\otimes_\sh{B}\sh{A}'$ is a quasi-coherent $\sh{B}$-algebra, thus also a quasi-coherent $\OO_S$-algebra \sref[I]{1.9.6.1}; let $Z$ be the spectrum of $\sh{A}\otimes_\sh{B}\sh{A}'$ \sref{2.1.3.1}.
+The canonical $\sh{B}$-homomorphisms $\sh{A}\to\sh{A}\otimes_\sh{B}\sh{A}'$ and $\sh{A}'\to\sh{A}\otimes_\sh{B}\sh{A}'$ correspond \sref{2.1.2.7} to $Y$-morphisms $Z\to X$ and $p':Z\to X'$.
+To see that the triple $(Z,p,p')$ is a product $X\times_Y X'$, we can reduce to the case where $S$ is an affine scheme with ring $C$ \sref[I]{1.3.2.6.4}.
+But then $Y$, $X$, and $X'$ are affine schemes \sref{2.1.3.4} whose rings $B$, $A$, and $A'$ are $C$-algebras such that $\sh{B}=\wt{B}$, $\sh{A}=\wt{A}$, and $\sh{A}'=\wt{A'}$.
+We then know \sref[I]{1.1.3.13} that $\sh{A}\otimes_\sh{B}\sh{A}'$ canonically identifies with the $\OO_S$-algebra $(A\otimes_B A')^\sim$, hence the ring $A(Z)$ identifies with $A\otimes_B A'$ and the morphisms $p$ and $p'$ correspond to the canonical homomorphisms $A\to A\otimes_B A'$ and $A'\to A\otimes_B A'$.
+The proposition then follows from \sref[I]{1.3.2.2}.
+\end{proof}
+
+\begin{cor}[1.4.7]
+\label{2.1.4.7}
+Let $\sh{F}$ (resp.~$\sh{F}'$) be a quasi-coherent $\OO_X$-module (resp.~$\OO_{X'}$-module); then $\sh{A}(\sh{F}\otimes_Y\sh{F}')$ canonically identifies with $\sh{A}(\sh{F})\otimes_{\sh{A}(Y)}\sh{A}(\sh{F}')$.
+\end{cor}
+
+\begin{proof}
+\label{proof-2.1.4.7}
+We know that $\sh{F}\otimes_Y\sh{F}'$ is quasi-coherent over $X\times_Y X'$ \sref[I]{1.9.1.2}.
+Let $g:Y\to S$, $f:X\to Y$, and $f':X'\to Y$ be the structure morphisms, such that the structure morphism
+\oldpage{11}
+$h:Z\to S$ is equal to $g\circ f\circ p$ and to $g\circ f'\circ p'$.
+We define a canonical homomorphism
+\[
+  \sh{A}(\sh{F})\otimes_{\sh{A}(Y)}\sh{A}(\sh{F}')\to\sh{A}(\sh{F}\otimes_Y\sh{F}')
+\]
+in the following way: for every open $U\subset S$, we have canonical homomorphisms $\Gamma(f^{-1}(g^{-1}(U)),\sh{F})\to\Gamma(h^{-1}(U),p^*(\sh{F}))$ and $\Gamma(f^{\prime-1}(g^{-1}(U)),\sh{F}')\to\Gamma(h^{-1}(U),p^{\prime*}(\sh{F}'))$ \sref[0]{0.4.4.3}, thus we obtain a canonical homomorphism
+\[
+  \Gamma(f^{-1}(g^{-1}(U)),\sh{F})\otimes_{\Gamma(g^{-1}(U),\OO_Y)}\Gamma(f^{\prime-1}(g^{-1}(U)),\sh{F}')\to\Gamma(h^{-1}(U),p^*(\sh{F}))\otimes_{\Gamma(h^{-1}(U),\OO_Z)}\Gamma(h^{-1}(U),p^{\prime*}(\sh{F}')).
+\]
+
+To see that we have defined an isomorphism of $\sh{A}(Z)$-modules, we can reduce to the case where $S$ (and as a result $X$, $X'$, $Y$, and $X\times_Y X'$) are affine scheme, and (with the notation of Proposition~\sref{2.1.4.6}), $\sh{F}=\wt{M}$, $\sh{F}'=\wt{M'}$, where $M$ (resp.~$M'$) is an $A$-module (resp.~an $A'$-module).
+Then $\sh{F}\otimes_Y\sh{F}'$ identifies with the sheaf on $X\times_Y X'$ associated to the $(A\otimes_B A')$-module $M\otimes_B M'$ \sref[I]{1.9.1.3}, and the corollary follows from the canonical identification of the $\OO_S$-modules $(M\otimes_B M')^\sim$ and $\wt{M}\otimes_\wt{B}\wt{M'}$ (where $M$, $M'$, and $B$ are considered as $C$-modules) (\sref[I]{1.1.3.12} and \sref[I]{1.1.6.3}).
+\end{proof}
+
+If we apply Corollary~\sref{2.1.4.7} in particular to the case where $X=Y$ and $\sh{F}'=\OO_{X'}$, then we see that the $\sh{A}'$-module $\sh{A}(f^{\prime*}(\sh{F}))$ identifies with $\sh{A}(\sh{F})\otimes_\sh{B}\sh{A}'$.
+
+\begin{env}[1.4.8]
+\label{2.1.4.8}
+In particular, when $X=X'=Y$ ($X$ being affine over $S$), we see that if $\sh{F}$ and $\sh{G}$ are two quasi-coherent $\OO_X$-modules, then we have
+\[
+\label{2.1.4.8.1}
+  \sh{A}(\sh{F}\otimes_{\OO_X}\sh{G})=\sh{A}(\sh{F})\otimes_{\sh{A}(X)}\sh{A}(\sh{G})
+  \tag{1.4.8.1}
+\]
+up to canonical functorial isomorphism.
+If in addition $\sh{F}$ admits a finite presentation, then it follows from \sref[I]{1.1.6.3} and \sref[I]{1.1.3.12} that
+\[
+\label{2.1.4.8.2}
+  \sh{A}(\shHom_X(\sh{F},\sh{G}))=\shHom_{\sh{A}(X)}(\sh{A}(\sh{F}),\sh{A}(\sh{G}))
+  \tag{1.4.8.2}
+\]
+up to canonical isomorphism.
+\end{env}
+
+\begin{rmk}[1.4.9]
+\label{2.1.4.9}
+If $X$ and $X'$ are two preschemes affine over $S$, then the sum $X\sqcup X'$ is also affine over $S$, as the sum of two affine schemes is an affine scheme.
+\end{rmk}
+
+\begin{prop}[1.4.10]
+\label{2.1.4.10}
+Let $S$ be a prescheme, $\sh{B}$ a quasi-coherent $\OO_S$-algebra, and $X=\Spec(\sh{B})$.
+For a quasi-coherent sheaf of ideals $\sh{J}$ of $\sh{B}$, $\wt{\sh{J}}$ is quasi-coherent sheaf of ideals of $\OO_X$, and the closed subprescheme $Y$ of $X$ defined by $\wt{\sh{J}}$ is canonically isomorphic to $\Spec(\sh{B}/\sh{J})$.
+\end{prop}
+
+\begin{proof}
+\label{proof-2.1.4.10}
+It follows immediately from \sref[I]{1.4.2.3} that $Y$ is affine over $S$; by Proposition~\sref{2.1.3.1}, we reduce to the case where $S$ is affine, and the proposition then follows immediately from \sref[I]{1.4.1.2}.
+\end{proof}
+
+We can also express the result of Proposition~\sref{2.1.4.10} by saying that if $h:\sh{B}\to\sh{B}'$ is a \emph{surjective} homomorphism of quasi-coherent $\OO_S$-algebras, $\sh{A}(h):\Spec(\sh{B}')\to\Spec(\sh{B})$ is a \emph{closed immersion}.
+
+\begin{prop}[1.4.11]
+\label{2.1.4.11}
+\oldpage{12}
+Let $S$ be a prescheme, $\sh{B}$ a quasi-coherent $\OO_S$-algebra, and $X=\Spec(\sh{B})$.
+For every quasi-coherent sheaf of ideals $\sh{K}$ of $\OO_S$, we have (denoting by $f$ the structure morphism $X\to S$) $f^*(\sh{K})\OO_X=(\sh{K}\sh{B})^\sim$ up to canonical isomorphism.
+\end{prop}
+
+\begin{proof}
+\label{proof-2.1.4.11}
+The question being local on $S$, we can reduce to the case where $S=\Spec(A)$ is affine, and in this case the proposition is none other than \sref[I]{1.1.6.9}.
+\end{proof}
+
+\subsection{Change of base prescheme}
+\label{subsection:change-of-base-prescheme}
 
