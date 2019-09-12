@@ -8,7 +8,9 @@
 \usepackage[linktocpage=true,colorlinks=true,hyperindex,citecolor=blue,linkcolor=magenta]{hyperref}
 \usepackage[left=0.95in,right=0.95in,top=0.75in,bottom=0.75in]{geometry}
 \usepackage[charter,ttscaled=false,greekfamily=didot,uppercase=upright,greeklowercase=upright]{mathdesign}
+
 \usepackage{Baskervaldx}
+
 \usepackage{enumitem}
 \usepackage{longtable}
 \usepackage{aurical}
@@ -46,8 +48,16 @@
 \newtheorem*{nota}{Notation}
 
 % indent subsections, see https://tex.stackexchange.com/questions/177290/.
+% also make section titles bigger.
+% also add § to \thesection, https://tex.stackexchange.com/questions/119667/ and https://tex.stackexchange.com/questions/308737/.
 \makeatletter
-\def\l@subsection{\@tocline{2}{0pt}{2.5pc}{5pc}{}}
+\def\l@subsection{\@tocline{2}{0pt}{2.5pc}{1.5pc}{}}
+\def\section{\@startsection{section}{1}%
+  \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
+  {\normalfont\bfseries\Large\scshape\centering}}
+\renewcommand{\@seccntformat}[1]{%
+  \ifnum\pdfstrcmp{#1}{section}=0\textsection\fi%
+  \csname the#1\endcsname.~}
 \makeatother
 
 %\allowdisplaybreaks[1]
@@ -134,4 +144,3 @@
       {\hyperref[#2]{\normalfont{(\textbf{#1},~\StrGobbleLeft{#2}{2})}}}%
       {\hyperref[#2]{\normalfont{(\textbf{#1},~\StrGobbleLeft{#2}{2},~{#3})}}}}%
 }
-
